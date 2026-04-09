@@ -1,0 +1,2 @@
+export const buttonClass = "font-medium rounded-full flex items-center gap-1 cursor-pointer transition-colors duration-300 shadow-lg shadow-gray-200"
+export const containerClass = "h-[810px] w-3/4 bg-gray-200 rounded-[30px]"
