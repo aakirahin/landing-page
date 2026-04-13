@@ -1,11 +1,11 @@
+import { h1Class, secondaryClass } from "../../utils/tailwindClasses"
 import ButtonSet from "../Buttons/ButtonSet"
 
 const divClass = "flex flex-col items-center"
-const h1Class = "font-semibold text-6xl"
 
 const verbs = ["Automate", "Streamline", "Optimise", "Simplify"]
 
-const Hero = () => {
+const HeroText = () => {
     return (
         <div className={`${divClass} gap-[24px]`}>
             <div className={`${divClass} gap-[8px]`}>
@@ -17,13 +17,13 @@ const Hero = () => {
                         id="verbs-container"
                         className="rounded-[30px]"
                     >
-                        {verbs.map((verb) => (<span id="verb">{verb}</span>))}
+                        {verbs.map((verb) => (<span id="verb" key={verb}>{verb}</span>))}
                     </div>
                     <p>&nbsp;your workflows.</p>
                 </h1>
                 <h1 className={h1Class}>Focus on what matters.</h1>
             </div>
-            <div className={`${divClass} text-[#646464]`}>
+            <div className={`${divClass} ${secondaryClass}`}>
                 <p>We helps teams streamline operations, automate repetitive tasks, and gain real-time insights.</p>
                 <p>All in one platform.</p>
             </div>
@@ -32,4 +32,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default HeroText

@@ -1,2 +1,6 @@
 export const buttonClass = "font-medium rounded-full flex items-center gap-1 cursor-pointer transition-colors duration-300 shadow-lg shadow-gray-200"
-export const containerClass = "h-[810px] w-3/4 bg-gray-200 rounded-[30px]"
+export const containerClass = "h-screen w-3/4 bg-gray-200 rounded-[30px]"
+export const cardClass = "bg-white border border-gray-100 p-[32px] rounded-[20px]"
+export const h1Class = "font-semibold text-6xl"
+export const h2Class = "text-4xl font-semibold"
+export const secondaryClass = "text-[#646464]"

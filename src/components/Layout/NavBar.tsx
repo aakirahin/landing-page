@@ -14,7 +14,7 @@ const NavBar = () => {
         <div className="flex flex-row justify-between items-center w-[75%] py-[16px]">
             <img
                 src={logo}
-                alt="Logo"
+                alt="Synchrono"
                 width={24}
                 height={24}
             />

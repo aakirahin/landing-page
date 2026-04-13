@@ -1,8 +1,8 @@
-import IPSUM from "../assets/mock_logos/IPSUM.svg"
-import l_ogo from "../assets/mock_logos/l_ogo.svg"
-import LOGO from "../assets/mock_logos/LOGO.svg"
-import logoipsum from "../assets/mock_logos/logoipsum.svg"
-import LogoIpsum from "../assets/mock_logos/LogoIpsum.svg"
+import IPSUM from "../../assets/mock_logos/IPSUM.svg"
+import l_ogo from "../../assets/mock_logos/l_ogo.svg"
+import LOGO from "../../assets/mock_logos/LOGO.svg"
+import logoipsum from "../../assets/mock_logos/logoipsum.svg"
+import LogoIpsum from "../../assets/mock_logos/LogoIpsum.svg"
 
 const logoList = [
     {
@@ -35,6 +35,7 @@ const LogoList = () => {
                 <img
                     key={logo.name}
                     src={logo.src}
+                    alt={logo.name}
                     className="opacity-[50%] hover:opacity-[75%] cursor-pointer transition-all duration-300"
                 />
             ))
