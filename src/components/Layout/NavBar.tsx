@@ -11,15 +11,15 @@ const navItems = [
 
 const NavBar = () => {
     return (
-        <div className="flex flex-row justify-between items-center w-[75%] py-[16px]">
+        <div className="flex flex-row justify-between items-center w-[75%] p-[16px] z-50">
             <img
                 src={logo}
                 alt="Synchrono"
-                width={24}
-                height={24}
+                width={32}
+                height={32}
             />
             <div className="flex flex-row gap-[48px] items-center">
-                {navItems.map((item) => (<p key={`navItem_${item}`} className="font-medium hover:text-gray-400 cursor-pointer transition-color duration-200">{item}</p>))}
+                {navItems.map((item) => (<p key={`navItem_${item}`} className="nav-link">{item}</p>))}
             </div>
             <GetStartedButton/>
         </div>

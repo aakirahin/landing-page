@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { h1Class } from '../utils/tailwindClasses'
 
 const Word = ({
     word,
@@ -35,8 +34,8 @@ const AnimatedText = ({ text }: { text: string }) => {
 
     return (
         <div ref={containerRef} className="relative h-[300vh]">
-            <div className="sticky top-0 h-screen flex items-center justify-center px-8">
-                <p className={`${h1Class} text-center`}>
+            <div className="sticky top-0 h-screen flex-center px-8">
+                <p className={`text-h1 text-center`}>
                     {words.map((word, i) => (
                         <Word
                             key={i}

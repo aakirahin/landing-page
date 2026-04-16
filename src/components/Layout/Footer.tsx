@@ -29,7 +29,7 @@ const Footer = () => {
           Object.keys(footer.links).map((key) => (
             <div className="flex flex-col gap-4">
               <span className="font-semibold">{key}</span>
-              {footer.links[key].map((link: string) => (<span className="font-medium text-gray-500 hover:text-gray-600 cursor-pointer duration-300 transition-colors">{link}</span>))}
+              {footer.links[key].map((link: string) => (<span className="footer-link">{link}</span>))}
             </div>
           ))
         }

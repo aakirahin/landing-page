@@ -3,45 +3,53 @@ import l_ogo from "../../assets/mock_logos/l_ogo.svg"
 import LOGO from "../../assets/mock_logos/LOGO.svg"
 import logoipsum from "../../assets/mock_logos/logoipsum.svg"
 import LogoIpsum from "../../assets/mock_logos/LogoIpsum.svg"
+import LogoLoop from "../LogoLoop"
 
 const logoList = [
     {
-        name: "LOGO",
-        src: LOGO
+        src: LOGO,
+        alt: "LOGO",
+        href: "/"
     },
     {
-        name: "logoipsum",
-        src: logoipsum
+        src: logoipsum,
+        alt: "logoipsum",
+        href: "/"
     },
     {
-        name: "IPSUM",
-        src: IPSUM
+        src: IPSUM,
+        alt: "IPSUM",
+        href: "/"
     },
     {
-        name: "l_ogo",
-        src: l_ogo
+        src: l_ogo,
+        alt: "l_ogo",
+        href: "/"
     },
     {
-        name: "LogoIpsum",
-        src: LogoIpsum
+        src: LogoIpsum,
+        alt: "LogoIpsum",
+        href: "/"
     },
 ]
 
 const LogoList = () => {
-  return (
-    <div className="flex w-3/4 justify-between">
-        {
-            logoList.map((logo) => (
-                <img
-                    key={logo.name}
-                    src={logo.src}
-                    alt={logo.name}
-                    className="opacity-[50%] hover:opacity-[75%] cursor-pointer transition-all duration-300"
-                />
-            ))
-        }
-    </div>
-  )
+    return (
+        <div className="flex w-3/4 relative overflow-hidden">
+            <LogoLoop
+                logos={logoList}
+                speed={50}
+                direction="left"
+                logoHeight={36}
+                gap={100}
+                hoverSpeed={10}
+                useCustomRender={false}
+                className="opacity-[50%] cursor-pointer"
+                fadeOut
+                fadeOutColor="#fafafa"
+            />
+        </div>
+    )
 }
 
 export default LogoList

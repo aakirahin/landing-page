@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import james from "../assets/reviews/james_patel.svg"
 import sarah from "../assets/reviews/sarah_chen.svg"
 import emily from "../assets/reviews/emily_rod.svg"
-import { cardClass, h2Class, secondaryClass } from "../utils/tailwindClasses"
 
 const reviews = [
     {
@@ -42,9 +41,9 @@ const ReviewCard = ({ review, index }: { review: typeof reviews[0], index: numbe
     const rotate = useTransform(scrollYProgress, [0, 1], [0, targetRotation])
 
     return (
-        <div ref={cardRef} className="flex flex-col items-center sticky top-80 h-[50vh]">
+        <div ref={cardRef} className="flex-col-center sticky top-80 h-[50vh]">
             <motion.div
-                className={`flex flex-col gap-4 w-[400px] shadow-lg ${cardClass}`}
+                className={`flex flex-col gap-4 w-[400px] shadow-lg card`}
                 style={{ rotate }}
             >
                 <p className="text-[16px] font-medium">"{review.quote}"</p>
@@ -55,7 +54,7 @@ const ReviewCard = ({ review, index }: { review: typeof reviews[0], index: numbe
                     />
                     <div className="flex flex-col">
                         <span className="font-medium">{review.name}</span>
-                        <span className={secondaryClass}>{review.role}, {review.company}</span>
+                        <span className={text-subtle}>{review.role}, {review.company}</span>
                     </div>
                 </div>
             </motion.div>
@@ -73,8 +72,8 @@ const WallOfLove = () => {
     const h2Y = useTransform(scrollYProgress, [0.95, 1], [0, -300])
 
     return (
-        <section ref={ref} className={`h-[200vh] flex flex-col justify-center items-center gap-[48px] w-2/3`}>
-            <motion.h2 style={{ y: h2Y }} className={`sticky top-60 z-10 ${h2Class}`}>See what people are saying about us!</motion.h2>
+        <section ref={ref} className={`h-[200vh] flex-col-center justify-center gap-[48px] w-2/3`}>
+            <motion.h2 style={{ y: h2Y }} className={`sticky top-60 z-10 text-h2`}>See what people are saying about us!</motion.h2>
             {
                 reviews.map((review, i) => (
                     <ReviewCard 

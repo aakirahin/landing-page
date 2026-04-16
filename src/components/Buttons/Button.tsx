@@ -1,5 +1,4 @@
 import React from 'react'
-import { buttonClass } from '../../utils/tailwindClasses'
 
 type Props = { 
     img: boolean
@@ -15,7 +14,7 @@ const Button = ({
     className
 }: Props) => {
     return (
-        <button className={`${buttonClass} ${img ? "pl-[8px] pr-[16px] py-[8px] gap-2" : "px-[16px] py-[12px]"} ${className}`}>
+        <button className={`btn-base ${img ? "pl-[8px] pr-[16px] py-[8px] gap-2" : "px-[16px] py-[12px]"} ${className}`}>
             {icon}
             {label}
         </button>

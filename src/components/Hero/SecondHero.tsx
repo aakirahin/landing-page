@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion"
-import { containerClass, h1Class, secondaryClass } from "../../utils/tailwindClasses"
 import Button from "../Buttons/Button"
 import stickyNote from "../../assets/clutter/sticky-note-paper-transparent-free-png.png"
 import pencil from "../../assets/clutter/Pencil-PNG.png"
@@ -13,11 +12,9 @@ import work2 from "../../assets/clutter/image 7.svg"
 import plant from "../../assets/clutter/house-plant-monstera-deliciosa-in-pot-top-view-ai-generated-free-png.png"
 
 const Image = ({ 
-  index, 
   img,
   scrollYProgress
 }: { 
-  index: number
   img: {
     src: string
     rotation: number
@@ -28,20 +25,15 @@ const Image = ({
   scrollYProgress: MotionValue<number>
 }) => {
   const { src, rotation, x, y, width } = img
-  // const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1])
+  const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1])
   
   return (
     <motion.img
       src={src}
       alt="Image"
       width={width}
-      className="absolute cursor-pointer"
-      whileHover={{ scale: 1.05 }}
-      transition={{
-        default: { type: "spring", stiffness: 100, damping: 15, delay: index * 0.1 },
-        scale: { type: "spring", stiffness: 300, damping: 10 }
-      }}
-      style={{ rotate: rotation, x, y }}
+      className="absolute"
+      style={{ rotate: rotation, x, y, scale }}
     />
   )
 }
@@ -87,42 +79,53 @@ const SecondHero = () => {
   const images = [
     { src: stickyNote, rotation: -6, x: 0, y: 0, width: "30%" }, // top-left
     { src: pencil, rotation: 40, x: 150, y: -100, width: "20%" }, // top-left
-    { src: laptop, rotation: -6, x: -200, y: middle - 50, width: "25%" }, // middle-left
+    { src: laptop, rotation: -6, x: -150, y: middle - 50, width: "25%" }, // middle-left
     { src: work2, rotation: -10, x: 0, y: middle + 100, width: "15%" }, // middle-left
-    { src: glasses, rotation: -10, x: 0, y: bottom, width: "30%" }, // bottom-left
+    { src: glasses, rotation: -10, x: 100, y: bottom, width: "30%" }, // bottom-left
 
     { src: coffee, rotation: 5, x: right - 100, y: 0, width: "30%" }, // top-right
-    { src: folder, rotation: -4, x: right + 200, y: middle - 50, width: "10%" }, // middle-right
-    { src: work, rotation: 4, x: right, y: middle, width: "15%" }, // middle-right
-    { src: plant, rotation: 4, x: right - 200, y: bottom - 200, width: "30%" }, // bottom-right
+    { src: folder, rotation: -4, x: right - 50, y: 0, width: "10%" }, // middle-right
+    { src: work, rotation: 4, x: right + 50, y: middle + 50, width: "15%" }, // middle-right
+    { src: plant, rotation: 4, x: right - 200, y: bottom - 150, width: "30%" }, // bottom-right
   ]
 
   return (
-    <div ref={containerRef} className={`${containerClass} h-screen bg-transparent flex flex-col items-center justify-center relative`}>
+    <div ref={containerRef} className={`container-box card bg-white flex-col-center justify-center relative`}>
       <div className="absolute inset-0 w-full h-full pointer-events-auto">
         {
           images.map((img, i) => (
             <Image
               key={i}
-              index={i}
               img={img}
               scrollYProgress={scrollYProgress}
             />
           ))
         }
       </div>
-      <div className={`flex flex-col items-center justify-center gap-6 relative`}>
-        <h1 className={h1Class}>Work smarter, not harder.</h1>
-        <div className={`flex flex-col items-center ${secondaryClass}`}>
+      <div className={`flex-col-center justify-center gap-6 relative`}>
+        <h1 className="text-h1">Work smarter, not harder.</h1>
+        <div className={`flex-col-center text-subtle`}>
           <p>Automate tasks, collaborate seamlessly, and scale your business faster.</p>
           <p>Join thousands of teams already using Synchrono.</p>
         </div>
         <Button 
           img={false} 
           label="Start your free trial"
-          className='text-white bg-[#0084FF] hover:bg-[#4DA9FF]'
+          className='btn-primary'
         />
       </div>
+      {/* <FallingText
+        text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
+        highlightWords={["React", "Bits", "animated", "components", "simplify"]}
+        highlightClass="highlighted"
+        trigger="auto"
+        backgroundColor="transparent"
+        wireframes={false}
+        gravity={0.4}
+        fontSize="2.4rem"
+        mouseConstraintStiffness={0.1}
+        className="-z-1"
+      /> */}
     </div>
   )
 }

@@ -5,7 +5,6 @@ import {
   useMotionValueEvent,
   useScroll,
 } from 'framer-motion'
-import { cardClass, containerClass, h2Class, secondaryClass } from '../utils/tailwindClasses';
 import GlowingBadge from './GlowingBadge';
 
 const features = [
@@ -56,7 +55,7 @@ function Stepper({ progress, activeIndex }: { progress: number, activeIndex: num
               className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
               style={{ top: `${topPercent}%` }}
             >
-              <div className={`h-8 w-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 bg-white ${secondaryClass} ${(isActive || isCompleted) && "text-blue-500"}`}>
+              <div className={`h-8 w-8 rounded-full flex-center text-sm font-semibold transition-all duration-300 bg-white ${(isActive || isCompleted) ? "text-blue-500" : "text-subtle"}`}>
                 {step.id}
               </div>
             </div>
@@ -80,10 +79,10 @@ function FeatureContent({ activeIndex }: { activeIndex: number }) {
           transition={{ duration: 0.35, ease: 'easeOut' }}
           className="space-y-4"
         >
-          <h2 className={h2Class}>
+          <h2 className="text-h2">
             {activeFeature.title}
           </h2>
-          <p className={secondaryClass}>
+          <p className="text-subtle">
             {activeFeature.description}
           </p>
         </motion.div>
@@ -109,8 +108,8 @@ const FeaturesList = () => {
   })
 
   return (
-    <section ref={ref} className="relative h-[400vh] w-full flex justify-center">
-      <div className={`${containerClass} ${cardClass} sticky top-10 flex justify-between`}>
+    <section ref={ref} className="section-scroll h-[400vh]">
+      <div className={`container-box card sticky top-10 flex justify-between`}>
         <div className='flex gap-[32px] pt-[32px] w-1/2'>
           <Stepper progress={progress} activeIndex={activeIndex} />
           <FeatureContent activeIndex={activeIndex} />
