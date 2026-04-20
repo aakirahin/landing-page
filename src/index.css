@@ -9,7 +9,7 @@
 body {
   background-color: #FAFAFA;
   font-family: "Asta Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #3F3F3F;
 }
 
@@ -75,7 +75,7 @@ body {
   gap: 0.25rem;
   cursor: pointer;
   transition-property: color, background-color, border-color;
-  transition-duration: 300ms;
+  transition-duration: 200ms;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-color: rgb(229 231 235);
 }
@@ -94,7 +94,7 @@ body {
   color: #7F7F7F;
   cursor: pointer;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 200ms;
   &:hover {
     color: #646464;
   }
@@ -104,7 +104,7 @@ body {
   opacity: 50%;
   cursor: pointer;
   transition-property: opacity;
-  transition-duration: 300ms;
+  transition-duration: 200ms;
   &:hover {
     opacity: 100%;
   }
@@ -125,7 +125,7 @@ body {
   color: #646464;
   cursor: pointer;
   transition-property: color;
-  transition-duration: 300ms;
+  transition-duration: 200ms;
   &:hover {
     color: #7f7f7f;
   }
@@ -268,7 +268,7 @@ code {
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* --foreground: oklch(0.145 0 0); */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

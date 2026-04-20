@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
-import ShapeGrid from '../ShapeGrid'
+import ShapeGrid from '../ShapeGrid/ShapeGrid'
 
 type Props = {
     children: React.ReactNode

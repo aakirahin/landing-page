@@ -20,16 +20,16 @@ const Footer = () => {
           width="50%"
         />
         <p>
-          This is a frontend portfolio project to practice using Framer Motion. Please keep in mind that none of the links in this page will work.
+          This is a frontend portfolio project to practice using Framer Motion. None of the links in this page will work.
         </p>
         <ButtonSet/>
       </div>
       <div className="flex flex-row w-1/3 justify-between">
         {
           Object.keys(footer.links).map((key) => (
-            <div className="flex flex-col gap-4">
+            <div key={key} className="flex flex-col gap-4">
               <span className="font-semibold">{key}</span>
-              {footer.links[key].map((link: string) => (<span className="footer-link">{link}</span>))}
+              {footer.links[key].map((link: string) => (<span className="footer-link" key={`${key}_${link}`}>{link}</span>))}
             </div>
           ))
         }

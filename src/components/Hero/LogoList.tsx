@@ -3,7 +3,7 @@ import l_ogo from "../../assets/mock_logos/l_ogo.svg"
 import LOGO from "../../assets/mock_logos/LOGO.svg"
 import logoipsum from "../../assets/mock_logos/logoipsum.svg"
 import LogoIpsum from "../../assets/mock_logos/LogoIpsum.svg"
-import LogoLoop from "../LogoLoop"
+import LogoLoop from "../LogoLoop/LogoLoop"
 
 const logoList = [
     {

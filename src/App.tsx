@@ -1,8 +1,11 @@
-import FeaturesList from "./components/FeaturesList"
-import HeroAnimation from "./components/Hero/HeroAnimation"
+import ScrollText from "./components/ScrollText"
+import FeaturesList from "./components/FeaturesList/FeaturesList"
+import HeroAnimation from "./components/Hero/Animation/HeroAnimation"
 import HeroText from "./components/Hero/HeroText"
 import LogoList from "./components/Hero/LogoList"
+import SecondHero from "./components/Hero/SecondHero"
 import Layout from "./components/Layout/Layout"
+import WallOfLove from "./components/WallOfLove"
 
 function App() {
   return (
@@ -13,12 +16,11 @@ function App() {
         <HeroAnimation/>
       </section>
       <FeaturesList/>
-      {/* <section className="flex flex-col items-center justify-center w-full">
+      <section className="flex flex-col items-center justify-center w-full">
         <WallOfLove/>
-        <StatsList/>
-        <AnimatedText text="Ready to streamline your workflow?"/>
-      </section> */}
-      {/* <SecondHero/> */}
+        <ScrollText text="Ready to streamline your workflow?"/>
+      </section>
+      <SecondHero/>
     </Layout>
   )
 }

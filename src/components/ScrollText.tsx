@@ -24,7 +24,7 @@ const Word = ({
     )
 }
 
-const AnimatedText = ({ text }: { text: string }) => {
+const ScrollText = ({ text }: { text: string }) => {
     const words = text.split(' ')
     const containerRef = useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({
@@ -51,4 +51,4 @@ const AnimatedText = ({ text }: { text: string }) => {
     )
 }
 
-export default AnimatedText
+export default ScrollText

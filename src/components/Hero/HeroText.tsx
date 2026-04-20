@@ -1,5 +1,5 @@
 import ButtonSet from "../Buttons/ButtonSet"
-import RotatingText from "../RotatingText"
+import RotatingText from "../RotatingText/RotatingText"
 
 const verbs = ["Automate", "Streamline", "Optimise", "Simplify"]
 

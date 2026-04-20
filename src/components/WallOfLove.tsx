@@ -54,7 +54,7 @@ const ReviewCard = ({ review, index }: { review: typeof reviews[0], index: numbe
                     />
                     <div className="flex flex-col">
                         <span className="font-medium">{review.name}</span>
-                        <span className={text-subtle}>{review.role}, {review.company}</span>
+                        <span className={"text-subtle"}>{review.role}, {review.company}</span>
                     </div>
                 </div>
             </motion.div>

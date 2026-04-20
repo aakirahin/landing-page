@@ -5,7 +5,8 @@ import {
   useMotionValueEvent,
   useScroll,
 } from 'framer-motion'
-import GlowingBadge from './GlowingBadge';
+import GlowingBadge from '../GlowingBadge';
+import FeatureBox from './FeatureBox';
 
 const features = [
   {
@@ -40,7 +41,7 @@ function Stepper({ progress, activeIndex }: { progress: number, activeIndex: num
     <div className="relative h-105 w-10">
       <div className="absolute left-1/2 h-full w-0.75 -translate-x-1/2 bg-gray-200" />
       <motion.div
-        className="absolute left-1/2 w-0.75 -translate-x-1/2 bg-blue-500"
+        className="absolute left-1/2 w-0.75 -translate-x-1/2 bg-[#0084FF]"
         style={{ height: fillHeight }}
       />
       {
@@ -55,7 +56,7 @@ function Stepper({ progress, activeIndex }: { progress: number, activeIndex: num
               className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
               style={{ top: `${topPercent}%` }}
             >
-              <div className={`h-8 w-8 rounded-full flex-center text-sm font-semibold transition-all duration-300 bg-white ${(isActive || isCompleted) ? "text-blue-500" : "text-subtle"}`}>
+              <div className={`h-8 w-8 rounded-full flex-center text-sm font-semibold transition-all duration-300 bg-white ${(isActive || isCompleted) ? "text-[#0084FF]" : "text-subtle"}`}>
                 {step.id}
               </div>
             </div>
@@ -71,7 +72,7 @@ function FeatureContent({ activeIndex }: { activeIndex: number }) {
 
   return (
     <div className="w-2/3 flex flex-col gap-8">
-      <GlowingBadge/>
+      <GlowingBadge label="Features"/>
       <AnimatePresence mode="wait">
         <motion.div
           key={activeFeature.id}
@@ -114,7 +115,9 @@ const FeaturesList = () => {
           <Stepper progress={progress} activeIndex={activeIndex} />
           <FeatureContent activeIndex={activeIndex} />
         </div>
-        <div className=" w-1/2 rounded-[22px] bg-gray-200 items-end" />
+        <div className="flex w-1/2 rounded-[22px] bg-[#F5F5F5] justify-center items-center">
+          <FeatureBox activeIndex={activeIndex}/>
+        </div>
       </div>
     </section>
   )
